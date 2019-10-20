@@ -1,0 +1,19 @@
+ci = CurrentImage[]
+StringForm["Domain & Range Calculator"]
+imgExpr = {img1, img2, img3, img4, img5...}
+expr = ToExpression[ToString[TextRecognize[imgExpr[[1]]]]] 
+(*You can replace imgExpr[[1]] with ci or Image[ci] for access to the webcam*)
+fdImg =FunctionDomain[expr,x]
+frImg = FunctionRange[expr, x, y]
+If[fdImg == True, "All Real Numbers", 0]
+If[frImg == True, "All Real Numbers", 0]
+(*fd =FunctionDomain[expr2=Input["Enter Function:","ex. 1/(7-x)"],x]
+fr = FunctionRange[expr2, x, y]
+StringForm["Domain: `` \nRange: ``", fd, fr]
+CloudDeploy[StringForm["Domain: ``",fd]]
+CloudDeploy[StringForm["Range: ``", fr]]
+*)
+(*Uncommment this (above) to create a cloud form interface rather than an image feed*)
+StringForm["Domain: `` \nRange: ``", fdImg, frImg]
+CloudDeploy[StringForm["Domain: ``",fdImg]]
+CloudDeploy[StringForm["Range: ``", frImg]]
